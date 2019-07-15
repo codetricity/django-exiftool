@@ -10,3 +10,12 @@ def homepage(request):
     return render(request, 'home.html', {"output": output_list})
 
 
+def watermark(request):
+    image_file_name = "/home/craig/Pictures/theta/2019/watermark/toyo-hardrock.jpg"
+    logo_file_name = "/home/craig/Pictures/theta/2019/watermark/theta_logo.png"
+    output_file = "/home/craig/Development/django/shell/shell/media/new-image.jpg"
+    Popen(['composite', '-geometry', '+3000+1600', logo_file_name,
+        image_file_name, output_file], stdout=PIPE, stderr=STDOUT)
+
+    return render(request, 'watermark.html', {"output": output_file.split('/')[-1]})
+
