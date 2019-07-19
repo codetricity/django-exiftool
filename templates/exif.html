@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js" integrity="sha256-SNDsmWBFQwJAjxLymQu5Fqh6rW4RKLJXUQboy3O0BUA=" crossorigin="anonymous"></script>
+    <style>
+    
+    a-scene {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <title>EXIF Data extraction</title>
+</head>
+<body>
+        <h1>RICOH THETA exif output</h1>
+
+        <a-scene embedded>
+                <a-sky src="/media/{{filename}}" rotation="0 -130 0"></a-sky>
+        </a-scene>
+        
+        {% for line in output %}
+        
+            {{ line }}
+        <br >
+        {% endfor %}
+    
+</body>
+</html>
+
+

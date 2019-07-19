@@ -8,6 +8,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage),
-    path('watermark/', views.watermark),
+    path('exif/', views.exif, name='exif'),
+    path('watermark/', views.watermark, name='watermark'),
+    path('theta/', views.theta, name='theta'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

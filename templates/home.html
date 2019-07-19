@@ -4,28 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js" integrity="sha256-SNDsmWBFQwJAjxLymQu5Fqh6rW4RKLJXUQboy3O0BUA=" crossorigin="anonymous"></script>
-    <style>
-    
-    a-scene {
-        height: 400px;
-        width: 100%;
-      }
-    </style>
-    <title>EXIF Data extraction</title>
+
+
+    <title>RICOH THETA Shell and API Tests</title>
 </head>
 <body>
-        <h1>RICOH THETA exif output</h1>
-
-        <a-scene embedded>
-                <a-sky src="/media/{{filename}}" rotation="0 -130 0"></a-sky>
-        </a-scene>
-        
-        {% for line in output %}
-        
-            {{ line }}
-        <br >
-        {% endfor %}
+        <h1>RICOH THETA Shell and API Tests</h1>
+        Must have exiftool and ImageMagick installed on system as well as images.
+        For the THETA API test, you must have the THETA connected to your 
+        workstation or laptop with Wi-Fi.
+        <ul>
+            <li><a href="{% url 'exif' %}">exif data</a></li>
+            <li><a href="{% url 'watermark' %}">ImageMagick Watermark</a></li>
+            <li><a href="{% url 'theta' %}">THETA API test</a></li>
+        </ul>
     
 </body>
 </html>
